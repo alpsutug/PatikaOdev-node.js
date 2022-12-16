@@ -1,0 +1,33 @@
+
+  const sportmens = [
+    { sport_name: "Futbol"},
+    { sport_name: "Basketbol" },
+    { sport_name: "Voleybol"}
+  ];
+  
+  const listSportmen = () => {
+    sportmens.map((sportmen) => {
+      console.log(sportmen.sport_name);
+    });
+  };
+  
+  const addSportmen = (newSportmen) => {
+    const promise1 = new Promise((resolve, reject) => {
+        sportmens.push(newSportmen);
+      resolve(sportmens);
+      //reject('BIR HATA OLUSTU');
+    });
+  
+    return promise1;
+  };
+  
+  async function showSportmen() {
+    try {
+      await addSportmen({ sport_name: "Tenis"});
+      listSportmen();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  
+  showSportmen();
