@@ -1,0 +1,10 @@
+const  r=process.argv.slice(2)[0]*1;
+
+function yaricap(r){
+
+    let alan=(Math.PI.toFixed(2))*(Math.pow(r,2));
+
+    console.log("Yarıçapı",r, "olan dairenin alanı: ",alan);
+}
+
+yaricap(r);
